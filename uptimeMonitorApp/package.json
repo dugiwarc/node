@@ -1,6 +1,7 @@
 {
 	"name": "uptimeMonitorApp",
 	"version": "1.0.0",
+	"type": "module",
 	"description": "<!-- @format -->",
 	"main": "index.js",
 	"scripts": {

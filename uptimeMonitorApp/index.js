@@ -1,8 +1,9 @@
 /** @format */
 // Dependencies
-const http = require("http");
-const url = require("url");
-const StringDecoder = require("string_decoder").StringDecoder;
+import http from "http";
+import url from "url";
+import environmentToExport from "./config.js";
+import { StringDecoder } from "string_decoder";
 
 // The server should respond to all requests with a string
 const server = http.createServer(function (req, res) {
@@ -69,9 +70,11 @@ const server = http.createServer(function (req, res) {
 	});
 });
 
-// Start the server and have it listen on port 3000
-server.listen(3000, function () {
-	console.log("The server is listening");
+// Start the server
+server.listen(environmentToExport.port, function () {
+	console.log(
+		`The server is listening on port ${environmentToExport.port} in ${environmentToExport.envName} mode`
+	);
 });
 
 // Define the handlers
