@@ -32,6 +32,7 @@ const server = http.createServer(function (req, res) {
 
 	req.on("end", function () {
 		buffer += decoder.end();
+
 		// Choose the handler this request should go to. If not found use the not found handler
 		const chosenHandler =
 			typeof router[trimmedPath] !== "undefined"
@@ -58,6 +59,7 @@ const server = http.createServer(function (req, res) {
 			const payloadString = JSON.stringify(payload);
 
 			// Return the response
+			res.setHeader("Content-Type", "application/json");
 			res.writeHead(statusCode);
 			res.end(payloadString);
 
