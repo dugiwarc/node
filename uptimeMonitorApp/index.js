@@ -6,6 +6,30 @@ import url from "url";
 import environmentToExport from "./config.js";
 import { StringDecoder } from "string_decoder";
 import fs from "fs";
+import _data from "./lib/data.js";
+
+// Test data
+// TODO delete this
+// _data.create("test", "newFile", { foo: "bar" }, function (err) {
+// 	if (!err) {
+// 		console.log("success!");
+// 	} else {
+// 		console.log(err);
+// 	}
+// });
+// _data.read("test", "newF2ile", function (err, data) {
+// 	if (!err) {
+// 		return console.log("Yay", data);
+// 	} else console.log(":(\n", err);
+// });
+// _data.update("test", "newFile", { fass: "susackit" }, function (err, data) {
+// 	if (!err) {
+// 		console.log("Found ", data);
+// 		return data;
+// 	} else console.log(":(\n", err);
+// });
+
+_data.delete("test", "newFile");
 
 // The server should respond to all requests with a string
 // Instantiating the https server
